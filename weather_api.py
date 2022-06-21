@@ -49,9 +49,9 @@ cur.execute(""" CREATE TABLE weather(
 # avgRhm 평균상대습도
 
 for row in weather_data : 
-    weather = {}
+    temp = {}
     temp_list = []
-    weather.update(
+    temp.update(
         {
             'date' : row['tm'],
             'avgTa' : row['avgTa'],
@@ -63,11 +63,11 @@ for row in weather_data :
             'avgRhm' : row['avgRhm']
         }
     )
-    for i in weather:
-        if weather[i] == '':
-            weather[i] = '0'
+    for i in temp:
+        if temp[i] == '':
+            temp[i] = '0'
 
-    temp_list.append(list(weather.values()))
+    temp_list.append(list(temp.values()))
 
     for j in temp_list :
         cur.execute("INSERT INTO weather (date, avgTa, minTa, maxTa, sumSsHr, avgWs, sumRn, avgRhm) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", j)

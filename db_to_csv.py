@@ -11,11 +11,6 @@ conn = psycopg2.connect(
 
 cur = conn.cursor()
 
-
-subway_query = "Copy (SELECT * FROM subwayride) To '/Users/hyunchaiwon/Section3/project' With CSV DELIMITER ','";
-with open("weather.csv", "w") as file:
-        cur.copy_expert(subway_query, file)
-
-weather_query = "Copy (SELECT * FROM weather) To '/Users/hyunchaiwon/Section3/project' With CSV DELIMITER ','";
+weather_query = "COPY (SELECT * FROM weather) To STDOUT With CSV DELIMITER ','"
 with open("weather.csv", "w") as file:
         cur.copy_expert(weather_query, file)
