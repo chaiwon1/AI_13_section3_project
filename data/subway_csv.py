@@ -4,12 +4,13 @@ import psycopg2
 import csv
 
 
-#postgre와 연결해서 db연결
+#postgre와 연결
 conn = psycopg2.connect(
-    host="arjuna.db.elephantsql.com",
-    database="kpodyujx",
-    user="kpodyujx",
-    password="eYCCvsQlP4_M3mb1dIZonEqSdIQ2pS7C")
+                            host="arjuna.db.elephantsql.com",
+                            database="kpodyujx",
+                            user="kpodyujx",
+                            password="eYCCvsQlP4_M3mb1dIZonEqSdIQ2pS7C"
+                        )
 
 cur = conn.cursor()
 
@@ -17,10 +18,10 @@ cur = conn.cursor()
 #db에 저장
 cur.execute("DROP TABLE IF EXISTS subway")
 cur.execute(""" CREATE TABLE subway(
-                    date DATE NOT NULL PRIMARY KEY, 
-                    ride_num INTEGER, 
-                    alight_num INTEGER
-                    );
+                                        date DATE NOT NULL PRIMARY KEY, 
+                                        ride_num INTEGER, 
+                                        alight_num INTEGER
+                                    );
             """)
 
 with open('subway_data.csv') as f:

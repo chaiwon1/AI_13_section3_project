@@ -1,4 +1,3 @@
-
 import requests
 import json
 import psycopg2
@@ -15,12 +14,14 @@ raw_data = requests.get(url)
 parsed_data = json.loads(raw_data.text)
 weather_data = parsed_data['response']['body']['items']['item']
 
-#postgre와 연결해서 db연결
+
+#postgre와 연결
 conn = psycopg2.connect(
-    host="arjuna.db.elephantsql.com",
-    database="kpodyujx",
-    user="kpodyujx",
-    password="eYCCvsQlP4_M3mb1dIZonEqSdIQ2pS7C")
+                            host="arjuna.db.elephantsql.com",
+                            database="kpodyujx",
+                            user="kpodyujx",
+                            password="eYCCvsQlP4_M3mb1dIZonEqSdIQ2pS7C"
+                        )
 
 cur = conn.cursor()
 
@@ -28,18 +29,18 @@ cur = conn.cursor()
 #db에 저장
 cur.execute("DROP TABLE IF EXISTS weather")
 cur.execute(""" CREATE TABLE weather(
-                    date DATE NOT NULL PRIMARY KEY, 
-                    avgTa FLOAT,
-                    minTa FLOAT,
-                    maxTa FLOAT,
-                    sumSsHr FLOAT,
-                    avgWs FLOAT,
-                    sumRn FLOAT,
-                    avgRhm FLOAT
-                    );
+                                        DATE DATE NOT NULL PRIMARY KEY, 
+                                        avgTa FLOAT,
+                                        minTa FLOAT,
+                                        maxTa FLOAT,
+                                        sumSsHr FLOAT,
+                                        avgWs FLOAT,
+                                        sumRn FLOAT,
+                                        avgRhm FLOAT
+                                    );
             """)
 
-# date 날짜
+# DATE 날짜
 # avgTa 평균기온
 # minTa 최저기온
 # maxTa 최고기온
@@ -53,7 +54,7 @@ for row in weather_data :
     temp_list = []
     temp.update(
         {
-            'date' : row['tm'],
+            'DATE' : row['tm'],
             'avgTa' : row['avgTa'],
             'minTa' : row['minTa'],
             'maxTa' : row['maxTa'],
@@ -70,6 +71,6 @@ for row in weather_data :
     temp_list.append(list(temp.values()))
 
     for j in temp_list :
-        cur.execute("INSERT INTO weather (date, avgTa, minTa, maxTa, sumSsHr, avgWs, sumRn, avgRhm) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", j)
+        cur.execute("INSERT INTO weather (DATE, avgTa, minTa, maxTa, sumSsHr, avgWs, sumRn, avgRhm) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)", j)
 
 conn.commit()
