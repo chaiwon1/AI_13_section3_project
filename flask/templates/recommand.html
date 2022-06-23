@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Recommand</title>
 </head>
 <body>
     {% for item in recommand %}
-    <h1>이 지역의 추천 식당은<br>{{ item }}입니다.</h1>
+    <h1>이 지역의 추천 식당은<br>{{ item['title'] }}입니다.</h1>
+    <h1>식당의 카테고리는<br>{{ item['category'] }}입니다.</h1>
+    <h1>식당의 주소는<br>{{ item['roadAddress'] }}입니다.</h1>
+    <h1>식당의 사이트는<br>{{ item['link'] }}입니다.</h1><br>
     {% endfor %}
-    <a href='/'>go back to home page</a>
+    <a href='/'>처음으로 돌아가기</a>
 </body>
 </html>

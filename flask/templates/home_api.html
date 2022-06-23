@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home_api</title>
 </head>
 <body>
     {% for item in weather_data %}
-    <h1>오늘의 날씨는<br>{{ item }}입니다.</h1>
+    <h1>{{ date }}의 예상평균기온은<br>{{ item['avgTa'] }}도입니다.</h1>
+    <h1>{{ date }}의 예상최저기온은<br>{{ item['minTa'] }}도입니다.</h1>
+    <h1>{{ date }}의 예상최고기온은<br>{{ item['maxTa'] }}도입니다.</h1>
+    <h1>{{ date }}의 예상합계일조시간은<br>{{ item['sumSsHr'] }}시간입니다.</h1>
+    <h1>{{ date }}의 예상평균풍속은<br>{{ item['avgWs'] }} m/h입니다.</h1>
+    <h1>{{ date }}의 예상일강수량은<br>{{ item['sumRn'] }}mm입니다.</h1>
+    <h1>{{ date }}의 예상평균상대습도는<br>{{ item['avgRhm'] }}%입니다.</h1>
+    <br>
     {% endfor %}
 </body>
 </html>

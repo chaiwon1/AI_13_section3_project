@@ -1,6 +1,9 @@
 from flask import Blueprint, render_template, request
 import requests
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 recommand_bp = Blueprint('recommand', __name__)
 
@@ -11,8 +14,10 @@ def recommand():
 
     if request.method == 'POST' :
         ncreds = {
-                    "client_id": 'hS5xvT2ddaNb6bL4oy5J',      
-                    "client_secret" : 'Kz_yIoUWcu'
+
+                    "client_id": os.environ.get('client_id'),
+                    "client_secret" : os.environ.get('client_secret')
+
                  }
         nheaders = {
                         "X-Naver-Client-Id" : ncreds.get('client_id'),
@@ -22,7 +27,6 @@ def recommand():
         naver_local_url = "https://openapi.naver.com/v1/search/local.json?"
 
         location = request.form['지역']
-        # food = request.form['메뉴']
 
         recommands = []
         query = location + " " + " 맛집"

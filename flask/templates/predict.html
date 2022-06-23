@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Predict</title>
 </head>
 <body>
     <div>
-        <form method="POST", action="{{url_for('predict')}}">
+        <form method="POST", action="{{url_for('predict.predict')}}">
             <input type="text" name='평균기온' size="50" maxlength="30" placeholder="평균기온"><br>
             <input type="text" name='최저기온' size="50" maxlength="30" placeholder="최저기온"><br>
             <input type="text" name='최고기온' size="50" maxlength="30" placeholder="최고기온"><br>
