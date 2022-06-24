@@ -9,7 +9,6 @@ predict_bp = Blueprint('predict', __name__)
 @predict_bp.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'GET' :
-
         return render_template('predict.html')
 
     if request.method == 'POST' :
@@ -27,5 +26,6 @@ def predict():
             pred = round(pred[0])
 
             return render_template('predict_result.html', pred=pred)
+            
         except :
             return render_template("404.html")
