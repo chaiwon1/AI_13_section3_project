@@ -1,24 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Predict</title>
-</head>
-<body>
-    <div>
-        <form method="POST", action="{{url_for('predict.predict')}}">
-            <input type="text" name='평균기온' size="50" maxlength="30" placeholder="평균기온"><br>
-            <input type="text" name='최저기온' size="50" maxlength="30" placeholder="최저기온"><br>
-            <input type="text" name='최고기온' size="50" maxlength="30" placeholder="최고기온"><br>
-            <input type="text" name='합계일조시간' size="50" maxlength="30" placeholder="합계일조시간"><br>
-            <input type="text" name='평균풍속' size="50" maxlength="30" placeholder="평균풍속"><br>
-            <input type="text" name='일강수량' size="50" maxlength="30" placeholder="일강수량"><br>
-            <input type="text" name='평균상대습도' size="50" maxlength="30" placeholder="평균상대습도"><br>
-            <button type="submit">Predict</button>
-        </form>
-    </div>
-</body>
-</html>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>당신의 나들이</title>
+        <meta charset="utf-8"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="../static/css/main.css"/>
+        <noscript><link rel="stylesheet" href="../static/css/noscript.css"/></noscript>
+    </head>
 
+    <body class="is-preload">
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <h1>
+                    <a href="home.html">당신의 나들이</a>
+                </h1>
+                <nav id="nav">
+                    <ul>
+                        <li class="special">
+                            <a href="#menu" class="menuToggle">
+                                <span>Menu</span></a>
+                            <div id="menu">
+                                <ul>
+                                    <li>
+                                        <a href="home.html">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="predict.html">Prediction</a>
+                                    </li>
+                                    <li>
+                                        <a href="recommand_home.html">Recommend</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://velog.io/@bgly">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+
+            <!-- Main -->
+            <article id="main">
+                <header>
+                    <h2>예상 지하철 탑승객 수</h2>
+                    <p>기상정보를 기반으로 서울 지하철 예상 탑승객 수를 알려드릴게요</p>
+                </header>
+                <section class="wrapper style5">
+                    <div class="inner">
+
+                        <section>
+                            <h4>기상정보를 입력해주세요</h4>
+                            <form method="POST" ,="," action="{{url_for('predict.predict')}}">
+                                <div class="row gtr-uniform">
+                                    <form method="POST" ,="," action="{{url_for('predict.predict')}}"></form>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="평균기온" id="demo-name" value="" placeholder="평균기온"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="최저기온" id="demo-name" value="" placeholder="최저기온"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="최고기온" id="demo-name" value="" placeholder="최고기온"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="합계일조시간" id="demo-name" value="" placeholder="합계일조시간"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="평균풍속" id="demo-name" value="" placeholder="평균풍속"/>
+                                    </div>
+                                    <div class="col-6 col-12-xsmall">
+                                        <input type="text" name="평균상대습도" id="demo-name" value="" placeholder="평균상대습도"/>
+                                    </div>
+                                    <div class="col-12">
+                                        <ul class="actions">
+                                            <li><input type="submit" value="Predict" class="primary"/></li>
+                                            <li><input type="reset" value="Reset"/></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </form>
+                        </section>
+                    </article>
+
+                    <!-- Footer -->
+                    <footer id="footer">
+                        <ul class="icons">
+                            <li>
+                                <a href="#" class="icon brands fa-twitter">
+                                    <span class="label">Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon brands fa-facebook-f">
+                                    <span class="label">Facebook</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon brands fa-instagram">
+                                    <span class="label">Instagram</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon brands fa-dribbble">
+                                    <span class="label">Dribbble</span></a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon solid fa-envelope">
+                                    <span class="label">Email</span></a>
+                            </li>
+                        </ul>
+                        <ul class="copyright">
+                            <li>&copy; Untitled</li>
+                            <li>Design:
+                                <a href="http://html5up.net">HTML5 UP</a>
+                            </li>
+                        </ul>
+                    </footer>
+
+                </div>
+
+                <!-- Scripts -->
+                <script src="../static/js/jquery.min.js"></script>
+                <script src="../static/js/jquery.scrollex.min.js"></script>
+                <script src="../static/js/jquery.scrolly.min.js"></script>
+                <script src="../static/js/browser.min.js"></script>
+                <script src="../static/js/breakpoints.min.js"></script>
+                <script src="../static/js/util.js"></script>
+                <script src="../static/js/main.js"></script>
+
+            </body>
+
+        </html>

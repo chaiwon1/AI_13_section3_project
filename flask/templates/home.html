@@ -1,96 +1,134 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title></title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../static/css/main.css" />
-		<noscript><link rel="stylesheet" href="../static/css/noscript.css" /></noscript>
-	</head>
+    <head>
+        <title>당신의 나들이</title>
+        <meta charset="utf-8"/>
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, user-scalable=no"/>
+        <link rel="stylesheet" href="../static/css/main.css"/>
+        <noscript><link rel="stylesheet" href="../static/css/noscript.css"/></noscript>
+    </head>
 
-	<body class="landing is-preload">
+    <body class="landing is-preload">
 
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
+        <!-- Page Wrapper -->
+        <div id="page-wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="home.html">오늘의 날씨</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>MENU</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="home.html">Home</a></li>
-											<li><a href="predict.html">Prediction</a></li>
-											<li><a href="recommand_home.html">Recommend</a></li>
-											<li><a href="https://velog.io/@bgly">Contact Us</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
+            <!-- Header -->
+            <header id="header" class="alt">
+                <h1>
+                    <a href="home.html">오늘의 날씨</a>
+                </h1>
+                <nav id="nav">
+                    <ul>
+                        <li class="special">
+                            <a href="#menu" class="menuToggle">
+                                <span>Menu</span></a>
+                            <div id="menu">
+                                <ul>
+                                    <li>
+                                        <a href="home.html">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="predict.html">Prediction</a>
+                                    </li>
+                                    <li>
+                                        <a href="recommand_home.html">Recommend</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://velog.io/@bgly">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
 
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<h2>당신의 나들이</h2>
-							<p>오늘의 날씨와 지하철 예상승객수,<br />
-							그리고 주변 맛집까지<br />
-							모두 알려드릴게요</p><br/>
-              <h6>날짜를 입력해주세요</h6>
-							<ul class="actions special">
-                <form method="POST", action="{{url_for('home.home')}}">
-                  <li><input type="date" name='날짜'></li><br />
-                  <li><button type="submit" class="button primary">Search</button></li>
-                </form>
-							</ul>
-						</div>
-						<a href="#one" class="more scrolly">CREATED BY</a>
-					</section>
+            <!-- Banner -->
+            <section id="banner">
+                <div class="inner">
+                    <h2>당신의 나들이</h2>
+                    <p>오늘의 날씨와 지하철 예상승객수,<br/>
+                        그리고 주변 맛집까지<br/>
+                        모두 알려드릴게요</p><br/>
+                    <h6>날짜를 입력해주세요</h6>
 
-				<!-- CTA -->
-					<section id="cta" class="wrapper style4">
-						<div class="inner">
-							<header>
-								<h2>현 채 원</h2>
-								<br>세상의 많은 데이터가 더 많이 활용될 수 있도록<br />
-									더 많이 활용하기 위해 더더 많이 노력하도록</p>
-							</header>
-							<ul class="actions stacked">
-								<li><a href="https://github.com/chaiwon1" class="button fit primary">GITHUB</a></li>
-								<li><a href="https://velog.io/@bgly" class="button fit">BLOG</a></li>
-							</ul>
-						</div>
-					</section>
+                    <ul class="actions special">
+                        <form method="POST" ,="," action="{{url_for('home.home')}}">
+                            <li><input type="date" name='날짜' placeholder="날짜 입력"></li><br/>
+                            <li>
+                                <button type="submit" class="button primary">Search</button>
+                            </li>
+                        </form>
+                    </ul>
+                </div>
+                <a href="#one" class="more scrolly">CREATED BY</a>
+            </section>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-						</ul>
-						<ul class="copyright">
-							<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</footer>
+            <!-- CTA -->
+            <section id="cta" class="wrapper style4">
+                <div class="inner">
+                    <header>
+                        <h2>현 채 원</h2>
+                        <br>세상의 많은 데이터가 더 많이 활용될 수 있도록<br/>
+                        더 많이 활용하기 위해 더더 많이 노력하도록</p>
+                </header>
+                <ul class="actions stacked">
+                    <li>
+                        <a href="https://github.com/chaiwon1" class="button fit primary">GITHUB</a>
+                    </li>
+                    <li>
+                        <a href="https://velog.io/@bgly" class="button fit">BLOG</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-			</div>
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="icons">
+                <li>
+                    <a href="#" class="icon brands fa-twitter">
+                        <span class="label">Twitter</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon brands fa-facebook-f">
+                        <span class="label">Facebook</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon brands fa-instagram">
+                        <span class="label">Instagram</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon brands fa-dribbble">
+                        <span class="label">Dribbble</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon solid fa-envelope">
+                        <span class="label">Email</span></a>
+                </li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled</li>
+                <li>Design:
+                    <a href="http://html5up.net">HTML5 UP</a>
+                </li>
+            </ul>
+        </footer>
 
-		<!-- Scripts -->
-			<script src="../static/js/jquery.min.js"></script>
-			<script src="../static/js/jquery.scrollex.min.js"></script>
-			<script src="../static/js/jquery.scrolly.min.js"></script>
-			<script src="../static/js/browser.min.js"></script>
-			<script src="../static/js/breakpoints.min.js"></script>
-			<script src="../static/js/util.js"></script>
-			<script src="../static/js/main.js"></script>
+    </div>
 
-	</body>
+    <!-- Scripts -->
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery.scrollex.min.js"></script>
+    <script src="../static/js/jquery.scrolly.min.js"></script>
+    <script src="../static/js/browser.min.js"></script>
+    <script src="../static/js/breakpoints.min.js"></script>
+    <script src="../static/js/util.js"></script>
+    <script src="../static/js/main.js"></script>
+
+</body>
 
 </html>

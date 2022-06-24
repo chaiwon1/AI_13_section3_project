@@ -1,21 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home_api</title>
+    <title></title>
+    <meta charset="utf-8"/>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="../static1/css/main.css"/>
+    <noscript><link rel="stylesheet" href="../static1/css/noscript.css"/></noscript>
 </head>
+
 <body>
+
     {% for item in weather_data %}
-    <h1>{{ date }}의 예상평균기온은<br>{{ item['avgTa'] }}도입니다.</h1>
-    <h1>{{ date }}의 예상최저기온은<br>{{ item['minTa'] }}도입니다.</h1>
-    <h1>{{ date }}의 예상최고기온은<br>{{ item['maxTa'] }}도입니다.</h1>
-    <h1>{{ date }}의 예상합계일조시간은<br>{{ item['sumSsHr'] }}시간입니다.</h1>
-    <h1>{{ date }}의 예상평균풍속은<br>{{ item['avgWs'] }} m/h입니다.</h1>
-    <h1>{{ date }}의 예상일강수량은<br>{{ item['sumRn'] }}mm입니다.</h1>
-    <h1>{{ date }}의 예상평균상대습도는<br>{{ item['avgRhm'] }}%입니다.</h1>
-    <br>
+        <h1>{{ date }}의 예상평균기온은<br>{{ item['avgTa'] }}도입니다.</h1>
+        <h1>{{ date }}의 예상최저기온은<br>{{ item['minTa'] }}도입니다.</h1>
+        <h1>{{ date }}의 예상최고기온은<br>{{ item['maxTa'] }}도입니다.</h1>
+        <h1>{{ date }}의 예상합계일조시간은<br>{{ item['sumSsHr'] }}시간입니다.</h1>
+        <h1>{{ date }}의 예상평균풍속은<br>{{ item['avgWs'] }}
+            m/h입니다.</h1>
+        <h1>{{ date }}의 예상일강수량은<br>{{ item['sumRn'] }}mm입니다.</h1>
+        <h1>{{ date }}의 예상평균상대습도는<br>{{ item['avgRhm'] }}%입니다.</h1>
+        <br>
     {% endfor %}
+    <a href='/'>처음으로 돌아가기</a><br />
+    <a href='/predict'>예상 지하철 탑승객 수 예측하러 가기</a><br />
+    <a href='/recommand'>맛집 추천받으러 가기</a>
 </body>
+
 </html>

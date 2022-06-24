@@ -18,10 +18,9 @@ def predict():
             data3 = float(request.form['최고기온'])
             data4 = float(request.form['합계일조시간'])
             data5 = float(request.form['평균풍속'])
-            data6 = float(request.form['일강수량'])
-            data7 = float(request.form['평균상대습도'])
+            data6 = float(request.form['평균상대습도'])
 
-            arr = np.array([[data1, data2, data3, data4, data5, data6, data7]])
+            arr = np.array([[data1, data2, data3, data4, data5, data6]])
             pred = model.predict(arr)
             pred = round(pred[0])
 

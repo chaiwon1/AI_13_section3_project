@@ -1,7 +1,6 @@
 import pandas as pd
-from sklearn.linear_model import LinearRegression
-# from sklearn.model_selection import train_test_split
-# from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.preprocessing import MinMaxScaler
 
 import pickle
 
@@ -12,16 +11,22 @@ df_weather = pd.read_csv('csv/weather.csv')
 #df_sub에서 RIDE 컬러만 사용하기로
 df_sub.drop('ALIGHT', axis=1, inplace=True)
 
-#여기서 합쳐주고 index를 DATE로
+#여기서 합쳐주고 index를 DATE로, 강수량은 큰 영향도가 없어 삭제
 df_total = pd.merge(df_weather, df_sub, how='outer', on='DATE').set_index('DATE')
+df_total.drop('sumRn', axis=1, inplace=True)
 
 #target 설정 + 학습, 테스트 데이터셋 나누기
 target = 'RIDE'
 y_train = df_total[target]
 X_train = df_total.drop(target, axis=1, inplace=False)
 
+#정규화
+scaler = MinMaxScaler()
+X_train[:] = scaler.fit_transform(X_train[:])
+
+
 #모델 학습용 함수
-model = LinearRegression()
+model = RandomForestRegressor(n_estimators=500)
 model.fit(X_train, y_train)
 
 # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
