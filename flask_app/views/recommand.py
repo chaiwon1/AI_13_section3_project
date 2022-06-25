@@ -38,4 +38,4 @@ def recommand():
         for i in range(0,5):
             recommands.append(result_list[i])
 
-    return render_template('recommand.html', recommand=recommands)
+    return render_template('recommand.html', recommand=recommands, location=location)

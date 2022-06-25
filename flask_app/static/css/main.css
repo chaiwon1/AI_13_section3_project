@@ -2169,7 +2169,8 @@ input, select, textarea {
 
 		ul.alt {
 			list-style: none;
-			padding-left: 0;
+			/* padding-left: 0; */
+			margin: 0 auto;
 		}
 
 			ul.alt li {
@@ -2195,11 +2196,12 @@ input, select, textarea {
 		display: flex;
 		cursor: default;
 		list-style: none;
-		margin-left: -1em;
+		margin-top: 2em;
 		padding-left: 0;
 	}
 
 		ul.actions li {
+			margin-top: auto;
 			padding: 0 0 0 1em;
 			vertical-align: middle;
 		}
